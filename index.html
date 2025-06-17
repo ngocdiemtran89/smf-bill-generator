@@ -57,6 +57,21 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
         }
+        .btn-secondary {
+            background-color: #ffb6c1;
+            border-color: #ffb6c1;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        .btn-secondary:hover {
+            background-color: #ff69b4;
+            border-color: #ff69b4;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+        }
         .form-control::placeholder {
             color: #ffb6c1;
         }
@@ -65,6 +80,24 @@
         }
         .text-muted {
             color: #ff69b4 !important;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .form-section {
+            background-color: #fff5f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .form-section-title {
+            color: #ff69b4;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2em;
         }
     </style>
 </head>
@@ -76,39 +109,46 @@
         </div>
         
         <form id="billForm">
-            <div class="mb-3">
-                <label for="studentName" class="form-label">Học viên</label>
-                <input type="text" class="form-control" id="studentName" placeholder="Nhập tên học viên" required>
-            </div>
-            
-            <div class="mb-3">
-                <label for="parentName" class="form-label">Phụ huynh</label>
-                <input type="text" class="form-control" id="parentName" placeholder="Nhập tên phụ huynh" required>
-            </div>
-            
-            <div class="mb-3">
-                <label for="phone" class="form-label">Số điện thoại</label>
-                <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" required>
-            </div>
-            
-            <div class="mb-3">
-                <label for="tuition" class="form-label">Học phí</label>
-                <input type="number" class="form-control" id="tuition" placeholder="Nhập học phí" required>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="startDate" class="form-label">Từ ngày</label>
-                    <input type="date" class="form-control" id="startDate" required>
+            <div class="form-section">
+                <div class="form-section-title">Thông tin học viên</div>
+                <div class="mb-3">
+                    <label for="studentName" class="form-label">Học viên</label>
+                    <input type="text" class="form-control" id="studentName" placeholder="Nhập tên học viên" required>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="endDate" class="form-label">Đến ngày</label>
-                    <input type="date" class="form-control" id="endDate" required>
+                
+                <div class="mb-3">
+                    <label for="parentName" class="form-label">Phụ huynh</label>
+                    <input type="text" class="form-control" id="parentName" placeholder="Nhập tên phụ huynh" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Số điện thoại</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" required>
                 </div>
             </div>
+
+            <div class="form-section">
+                <div class="form-section-title">Thông tin học phí</div>
+                <div class="mb-3">
+                    <label for="tuition" class="form-label">Học phí</label>
+                    <input type="number" class="form-control" id="tuition" placeholder="Nhập học phí" required>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="startDate" class="form-label">Từ ngày</label>
+                        <input type="date" class="form-control" id="startDate" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="endDate" class="form-label">Đến ngày</label>
+                        <input type="date" class="form-control" id="endDate" required>
+                    </div>
+                </div>
+            </div>
             
-            <div class="text-center mt-4">
-                <button type="submit" class="btn btn-primary btn-lg">Tạo Hóa Đơn</button>
+            <div class="button-group">
+                <button type="button" class="btn btn-secondary" onclick="saveAsDraft()">Lưu nháp</button>
+                <button type="submit" class="btn btn-primary">Tạo Hóa Đơn</button>
             </div>
         </form>
     </div>
